@@ -23,7 +23,7 @@
 
 .rodapePrincipal-patrocinadores .container {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
 
 .rodapePrincipal-patrocinadores-list {
@@ -44,9 +44,11 @@
 
 .rodapePrincipal-navMap-list {
     display: flex;
-    flex-direction: column;
     height: 260px;
-    flex-wrap: wrap;
+    /* *flex-flow fusiona flex-direction con flex-wrap en una etiqueta */
+    /* flex-direction: column;
+    flex-wrap: wrap; */
+    flex-flow: column wrap;
 }
 
 .contenidoPrincipal-cursos {
@@ -54,12 +56,11 @@
     flex-wrap: wrap;
 }
 
-.contenidoPrincipal-cursos-link {
-    display: flex;
-    /* el profe lo puso pero si lo saco no hay cambio (para mi no va) */
+.contenidoPrincipal-cursos-link { 
+    display: flex;  /* el profe lo puso pero si lo saco no hay cambio (para mi no va) */
     width: 23%;
 }
-
+    
 .videoSobre .container {
     display: flex;
     justify-content: space-between;
@@ -69,21 +70,33 @@
     text-align: center;
     display: flex;
     flex-direction: column;
-    flex-grow: 10;
+    flex-grow: 1;
 }
 
 .videoSobre-video {
-    flex-grow: 2;
-    flex-shrink: 2;
+    margin: 0 auto;
 }
 
 .videoSobre-sobre-list {
-    flex-grow: 2;
+    flex-grow: 1;
+}
+
+.videoSobre-button {
+    width: 320px;
+    align-self: center;
 }
 
 /* RESPONSIVE */
+/* el cod que sigue va a ser aplicado hasta un max de 1000px */
+
+@media (max-width:1000px) {
+    .videoSobre-sobre {
+        margin-left: 1em;
+    }
+}
+
+/* el cod que sigue va a ser aplicado hasta un max de 768px */
 @media (max-width:768px) {
-    /* el cod que sigue va a ser aplicado hasta un max de 768px */
 
     .headerPrincipal .container {
         flex-direction: column;
@@ -132,5 +145,13 @@
 
     .videoSobre .container {
         flex-direction: column;
+    }
+
+    .videoSobre-video {
+        width: 100%;
+    }
+
+    .videoSobre-sobre {
+        margin-left: 0;
     }
 }
